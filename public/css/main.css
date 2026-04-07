@@ -4,7 +4,7 @@ html {
 
     font-family: monospace;
 
-    background-image: url('../img/texture_lt_blue_011.jpg');
+    background-image: url('../img/texture_lt_blue_011.png');
     background-repeat: repeat;
 }
 
@@ -100,9 +100,4 @@ section {
 
 p {
     text-indent: 1rem;
-}
-
-.half-size {
-    width: 50%;
-    height: 50%;
 }
