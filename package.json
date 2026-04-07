@@ -1,0 +1,17 @@
+{
+  "name": "jazzy-is-old",
+  "version": "1.0.0",
+  "description": "Un sitio web personal a la 2000s.",
+  "main": "build.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//sotokevin92/jazzy-is-old.git"
+  },
+  "keywords": [],
+  "author": "Kevin Soto",
+  "license": "ISC"
+}

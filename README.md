@@ -16,4 +16,4 @@ Mi idea es improvisar y retomar el contacto con una forma más simple de program
 - [ ] Sección: gente copada / links / inspiración
 - [ ] Sección: créditos para el fondo de TextureStation
 - [ ] Índice del blog, mover cada entrada a su propia página y agregar links de navegación
-- [ ] Definitivamente hacer un scriptcito para reutilizar partes como el <aside> y mantener consistente todo
+- [x] Definitivamente hacer un scriptcito para reutilizar partes como el <aside> y mantener consistente todo
