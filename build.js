@@ -141,7 +141,7 @@ for (const page of pages) {
     const targetPageURI = file.replace(TEMPLATE_EXTENSION, '.html');
 
     for (let i = 0; i < templateOutput.length; ++i) {
-        if (templateOutput[i].trim().startsWith(`<li><a href="@rel(${targetPageURI})"`)) {
+        if (templateOutput[i].trim().startsWith(`<li><a href="@rel(${targetPageURI.split('/')[0]}`)) {
             activePageLinkIndex = i;
             break;
         }
@@ -149,7 +149,7 @@ for (const page of pages) {
 
     if (activePageLinkIndex) {
         const elSpan = templateOutput[activePageLinkIndex]
-            .replace(`<a href="@rel(${targetPageURI})">`, '<span>')
+            .replace(/<a href="[^"]+">/, '<span>')
             .replace('</a>', '</span>');
 
         templateOutput.splice(activePageLinkIndex, 1, elSpan);
