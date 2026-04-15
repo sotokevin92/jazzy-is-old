@@ -3,6 +3,8 @@ import { readdir, readFile, writeFile, mkdir,  } from 'fs/promises';
 
 const TEMPLATE_EXTENSION = '.template.html';
 
+const rssBaseSite = 'https://jazzyhamster.ar';
+
 const srcDir = './src';
 const outputDir = './public';
 const BASE_TEMPLATE_FILE = 'base.template.html';
@@ -46,17 +48,16 @@ function generateRssFeed(posts) {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
         <channel>
-        <title>Your Site Name</title>
-    <link>https://yoursite.com</link>
+        <title>Jazzy is old - blog</title>
+    <link>${rssBaseSite}</link>
     <description>Your updates</description>
 
     ${posts.map(post => `
     <item>
       <title>${post.title}</title>
-      <link>https://yoursite.com${post.url}</link>
-      <description>${post.description}</description>
-      <pubDate>${post.date}</pubDate>
-      <guid>https://yoursite.com${post.url}</guid>
+      <link>${rssBaseSite}/${post.url}</link>
+      <pubDate>${post.date.toUTCString()}</pubDate>
+      <guid>${rssBaseSite}/${post.url}</guid>
     </item>
     `).join("")}
 
@@ -216,3 +217,7 @@ for (const page of pages) {
     });
     console.log(` > Wrote to ${targetPageURI}!\n`)
 }
+
+await writeFile(path.join(outputDir, 'blog.xml'), generateRssFeed(blogPosts), {
+    encoding: 'utf-8',
+});
