@@ -20,8 +20,8 @@ article {
 
 .article-content {
     p {
-        margin-top: .25rem;
-        margin-bottom: .25rem;
+        margin-top: .4rem;
+        margin-bottom: .4rem;
     }
 }
 
@@ -34,4 +34,13 @@ article {
     ul {
         list-style: square;
     }
+}
+
+q {
+    color: black;
+    font-style: italic;
+}
+
+h2, h3, h4, h5, h6 {
+    margin-top: 2.5rem;
 }
