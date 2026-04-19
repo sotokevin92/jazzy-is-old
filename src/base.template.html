@@ -13,8 +13,19 @@
   </style>
 </head>
 <body>
+<div class="logo-container">
+  <a href="@rel(index.html)" class="logo">
+    <img src="@rel(img/logo.gif)" alt="Black and white hamster playing a keytar" title="Jazzy is old"/>
+  </a>
+  <small class="art-by">art by <a href="https://t.me/tejoarts" target="_blank">Tejoncita</a></small>
+</div>
+
+<nav class="top-nav">
+@include common/top-nav.html
+</nav>
+
 <aside>
-@include common/sidebar.html
+  @include common/sidebar.html
 </aside>
 <main>
   <div class="content">
@@ -22,7 +33,7 @@
   </div>
 
   <footer>
-  @include common/footer.html
+    @include common/footer.html
   </footer>
 </main>
 </body>
