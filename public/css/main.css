@@ -3,6 +3,7 @@ html {
     padding: 0;
 
     font-family: monospace;
+    background-attachment: fixed;
     background-repeat: repeat;
 
     --font-size: 16px;
@@ -17,6 +18,30 @@ html {
 
     --main-width: 80%;
     --sidebar-width: 20%;
+    --top-icon-size: calc(var(--font-size) * 3.5);
+}
+
+@media (max-width: 1000px) {
+    html {
+        --main-width: 100%;
+        --font-size: 14px;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        --font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        --font-size: 10px;
+    }
+
+    a.top-link span {
+        display: none;
+    }
 }
 
 a {
@@ -106,7 +131,7 @@ a.top-link {
     }
 
     & img {
-        height: calc(var(--font-size) * 3.5);
+        height: var(--top-icon-size);
         width: auto;
 
         object-fit: contain;
@@ -184,6 +209,7 @@ section {
 
 p {
     text-indent: 1rem;
+    text-align: justify;
 }
 
 #blog-entries {
@@ -212,7 +238,8 @@ div.image-container {
     margin: 1.5em auto;
     text-align: center;
 
-    &>img {
+    & img {
+        min-width: 0;
         max-width: 100%;
     }
 }
