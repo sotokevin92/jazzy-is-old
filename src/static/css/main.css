@@ -291,3 +291,17 @@ table.schedule {
         font-family:  monospace;
     }
 }
+
+td.blog-tags {
+    text-align: left;
+    word-wrap: break-word;
+}
+
+span.blog-tag {
+    display: inline-block;
+    padding: .1rem .4rem;
+    border-radius: .3rem;
+    background-color: var(--accent);
+    color: var(--secondary);
+    font-size: small;
+}

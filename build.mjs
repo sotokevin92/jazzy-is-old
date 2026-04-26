@@ -172,6 +172,9 @@ for (const page of pages) {
             const titleIndex = templateOutput.findIndex(x => x.includes('<h2>'));
             const titleLine = templateOutput[titleIndex];
 
+            // Extract tags from @ if exists
+            const tags = lines.find(x => x.startsWith('@tags'))?.split(' ').slice(1) ?? [];
+
             if (titleIndex !== -1) {
                 blogPosts.push({
                     title: titleLine.replace('<h2>', '').replace('</h2>', '').trim(),
@@ -179,6 +182,7 @@ for (const page of pages) {
                     date: new Date(
                         targetPageURI.substring('blog/'.length, 'blog/'.length + 10)
                     ),
+                    tags
                 });
             }
 
@@ -208,6 +212,9 @@ for (const page of pages) {
   </td>
   <td>
     <a href="${post.url}">${post.title}</a>
+  </td>
+  <td class="blog-tags">
+    ${post.tags.map(x => `<span class="blog-tag">:${x}</span>`).join(' ')}
   </td>
 </tr>`)
         templateOutput.splice(i, 1, rows.join('\n'));
